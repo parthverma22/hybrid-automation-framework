@@ -1,0 +1,10 @@
+target/
+.idea/
+*.iml
+*.class
+test-output/
+allure-results/
+allure-report/
+.mvn/
+*.log
+src/test/resources/testdata/*.xlsx

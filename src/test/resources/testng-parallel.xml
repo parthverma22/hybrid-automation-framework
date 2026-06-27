@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- Parallel execution — each class in its own thread.
+     UI tests use ThreadLocal<WebDriver> so parallel browser sessions are safe. -->
+<suite name="Hybrid Automation Suite — Parallel" parallel="classes" thread-count="4" verbose="1">
+
+    <listeners>
+        <listener class-name="com.hybrid.listeners.TestListener"/>
+    </listeners>
+
+    <test name="Parallel UI + API">
+        <classes>
+            <class name="com.hybrid.ui.LoginTest"/>
+            <class name="com.hybrid.ui.InventoryTest"/>
+            <class name="com.hybrid.api.UserApiTest"/>
+            <class name="com.hybrid.api.PetApiTest"/>
+        </classes>
+    </test>
+
+</suite>
